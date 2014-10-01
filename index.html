@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<meta name="description" content="2048 is popular game and this is a clone of the same concept, i have added some enhancements as you can select now the board size then start playing, the game was developed using JavaScript so it will work on your browser any where, have fun.">
+		<meta name="keywords" content="2048,2048 game,games,JavaScript">
+		<meta name="author" content="Eslam Mahmoud">
+		<title>2048 demo</title>
+
+		<script src="./jquery.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+		<script src="./js/bootstrap.min.js"></script>
+		
+		<link href='./main.css' rel='stylesheet' type='text/css'>
+		<script src="./main.js" type="text/javascript"></script>
+
+		<script src="//load.sumome.com/" data-sumo-site-id="1f072008c10858fd6cbf10577b4a95f2ffb99110c3dd55343d9e327b4719a538" async></script>
+
+		<script type="text/javascript">//&lt;![CDATA[ 
+			var gameStarted = false;
+
+			$(window).keydown(function(e){
+				if(gameStarted){
+					action(e);
+				}
+			});
+
+			$(document).ready(function(){
+				$('#start').click(function(e){
+					gameStarted = true;
+					size = $('#boardSize').val();
+					if(size < 4 || size > 10){
+						size = 4;
+					}
+					newGame(size);
+				});
+
+				$('#start').click();
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="page-header">
+				<h1 class="text-center">2048 Game ;)</h1>
+			</div>
+			<form class="navbar-form">
+				<p class="text-center">
+					<select id="boardSize" class="form-control">
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+					<button class="btn btn-sm btn-success" type="button" id="start">Start</button>
+					<label id="gameOver" class="label label-danger">Game Over</label>
+					<label id="score">Score <span class="badge">0</span></label>
+				</p>
+			</form>
+			<div  class="text-center" id="content"></div>
+
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<div class="page-header">
+						<h4>What?</h4>
+					</div>
+					<p>2048 is popular game and this is a clone of the same concept, i have added some enhancements as you can select now the board size then start playing, the game was developed using JavaScript so it will work on your browser any where, have fun.</p>
+					<div class="page-header">
+						<h4>How?</h4>
+					</div>
+					<p>Use your arrow keys <span class="glyphicon glyphicon-arrow-left"></span> <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-down"></span> <span class="glyphicon glyphicon-arrow-right"></span> to move the blocks. When two blocks with the same number overlaps, they will be merged into one, try to get to 2048 good luck.</p>
+					<div class="page-header">
+						<h4>Why?</h4>
+					</div>
+					<p>As i said its a clone from a popular game that have been cloned many times till now with different changes but i created this clone for fun (it's a game :D) and to practice my JavaScript and as challenge for myself and i have done it in less than 6 hours separated on the transportation between work and home.</p>
+					<div class="page-header">
+						<h4>Who?</h4>
+					</div>
+					<p>I`m Eslam Mahmoud, Software Engineer who loves web development and creating projects <a href="http://eslam.me" target="_blank">check my other projects</a>.</p>
+					<h5 class="text-center">Made with <span class="glyphicon glyphicon-heart"></span> by <a href="http://eslam.me" target="_blank">Eslam Mahmoud</a> in Egypt</h5>
+				</div>	
+			</div>
+		</div>
+	</body>
+</html>

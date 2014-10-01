@@ -1,0 +1,42 @@
+.cell{
+	height: 75px;
+	width: 75px;
+	display: inline-block;
+	border: solid 1px gray;
+	text-align: center;
+	padding: 10px;
+	font-size: 25px;
+}
+
+.cell.c_0{
+	color:white;
+}
+
+#gameOver {
+	display: none;
+}
+
+.cell{
+	background-color: #853385;
+	color: white;
+}
+
+.c_0{
+	background-color:white;
+}
+
+.c_2, .c_4, .c_8{
+	background-color: #ADADEB;
+}
+
+.c_16, .c_32, .c_64{
+	background-color: #8585E0;
+}
+
+.c_128, .c_256, .c_512{
+	background-color: #5C5CD6;
+}
+
+.c_1024, .c_2048{
+	background-color: #3333CC;
+}
