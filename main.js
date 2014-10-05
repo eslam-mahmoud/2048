@@ -5,6 +5,12 @@ var moveAllowed = true;
 var move = 'up';
 var score = 0;
 
+function fireKey(el, key){
+    var e = $.Event('keydown');
+    e.keyCode = key;
+    el.trigger(e);
+}
+
 function newGame(startingSize){
 	$('#gameOver').hide();
 	score = 0;
@@ -343,9 +349,10 @@ function action(e) {
 		//only for the first random cell check if no empty cell check of the board is closed
 		if(randomCell == 0){
 			if(boardClosed(board)){
-				alert('game over.');
 				$('#gameOver').show();
 				gameStarted = false;
+				ga('send', 'pageview', '/2048?newGame');
+				alert('game over.');
 				return;
 			}
 		}
