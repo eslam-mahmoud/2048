@@ -17,4 +17,4 @@ Made with love by Eslam Mahmoud in Egypt
 
 Live demo
 =========
-http://eslam.me/2048/
+http://eslam.me/2048
